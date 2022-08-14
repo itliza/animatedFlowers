@@ -1,0 +1,39 @@
+.container {
+    padding: 80px;
+    display: flex;
+    justify-content: center;
+}
+.content {
+    position: relative;
+}
+.lamp-top {
+    position: absolute;
+    top: 20px;
+    left: 4px;
+}
+.lamp-bottom {
+    position: absolute;
+    left: 4px;
+    top: 380px;
+}
+.flower-first {
+    position: absolute;
+    top: 196px;
+    left: 20px;
+}
+.flower-second {
+    position: absolute;
+    top: 74px;
+    right: 20px;
+}
+.flower-third {
+    position: absolute;
+    /* bottom: 310px; */
+    bottom: 175px;
+    right: 30px;
+}
+.flower-fourth {
+    position: absolute;
+    bottom: 192px;
+    left: 60px;
+}
