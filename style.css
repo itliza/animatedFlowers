@@ -11,6 +11,16 @@
     top: 20px;
     left: 4px;
 }
+.lamp-left {
+    position: absolute;
+    top: 30px;
+    left: 27px;
+}
+.lamp-right {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
 .lamp-bottom {
     position: absolute;
     left: 4px;
@@ -36,4 +46,11 @@
     position: absolute;
     bottom: 192px;
     left: 60px;
+}
+.light {
+    position: absolute;
+    top: 3px;
+    left: 32px;
+    z-index: 10;
+    opacity: 0;
 }
