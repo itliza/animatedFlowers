@@ -26,11 +26,32 @@
     left: 4px;
     top: 380px;
 }
+
+
+/* FIRTS FLOWER */
+
 .flower-first {
     position: absolute;
-    top: 196px;
+    top: 243px;
     left: 20px;
 }
+.leaf-one {
+    position: absolute;
+    top: -5px;
+    left: 19px;
+}
+.leaf-two {
+    position: absolute;
+    top: -50px;
+    left: 55px;
+}
+.leaf-three {
+    position: absolute;
+    top: -23px;
+    left: 84px;
+}
+/* SECOND FLOWER */
+
 .flower-second {
     position: absolute;
     top: 74px;
