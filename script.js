@@ -6,7 +6,7 @@
 
 // gsap.to('.leaf-one', {rotate: -5, x: -5, delay: 3, duration: 5})
     
-gsap.to('.lamp-item-left', {rotate: 40, duration: 2})
+
 
 gsap.to(".leaf-one", {
     scrollTrigger: {
@@ -51,7 +51,7 @@ const button = document.querySelector('.btn_timer');
 button.addEventListener('click', startTimer);
     
 
-const timer = 10;
+const timer = 0.5;
 let amountTime = timer * 60;
 
 
@@ -102,7 +102,10 @@ function startTimer(){
 }
 
 function stopLight(){
-    gsap.to('.light', {opacity: 0, duration: 5});
+    // gsap.to('.light', {opacity: 0, duration: 5});
+    document.querySelectorAll('.light').forEach(item=>{
+        gsap.to('.light', {opacity:0, duration: 5})
+    })
 }
 function startLight(){
     document.querySelectorAll('.light').forEach(item=>{
