@@ -1,7 +1,30 @@
 .container {
     padding: 80px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+}
+.countDown {
+    font-size: 40px;
+}
+.timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 30%
+}
+.btn_timer {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: cornflowerblue;
+    border: none;
+    text-transform: uppercase;
+    color: #fff;
+}
+.btn_timer:hover {
+    background-color: navy;
+}
+.about {
+    font-size: 20px;
 }
 .content {
     position: relative;
@@ -26,7 +49,11 @@
     left: 4px;
     top: 380px;
 }
-
+.lamp-item-left {
+    position: absolute;
+    top: 18px;
+    left: 26px;
+}
 
 /* FIRTS FLOWER */
 
@@ -73,5 +100,5 @@
     top: 3px;
     left: 32px;
     z-index: 10;
-    opacity: 0;
+    opacity: 0; 
 }
