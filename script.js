@@ -45,28 +45,61 @@ gsap.to(".leaf-three", {
 });
 
 
+
+//DATE
+
+const todayDate = new Date();
+console.log(todayDate);
+
+const hour = todayDate.getHours();
+if(hour<10){
+    hour = `0${hour}`
+}
+console.log(hour)
+
+const minTime = 8;
+const maxTime = 18;
+
+if(hour >= maxTime || hour <= 23 ) {
+    timer = minTime + 23 - hour + 1;
+    console.log(timer);
+    startTimer();
+} else if(hour >= 0 || hour <= 8) {
+    timer = minTime - hour;
+    console.log(timer);
+    startTimer();
+}
+
 //TIMER
 
 const button = document.querySelector('.btn_timer');
 button.addEventListener('click', startTimer);
     
 
-const timer = 0.5;
-let amountTime = timer * 60;
+let amountTime = timer * 60 * 60;
 
 
 function startTimer(){
     gsap.to('.btn_timer', {opacity:0, duration: 1.5})
     function calculateTime(){
         const countDown = document.querySelector('.countDown');
-        let minutes = Math.floor(amountTime / 60);
-        let seconds = amountTime % 60;
+        let hours = Math.floor(amountTime / 3600);
+        let minutes = Math.floor(amountTime % 3600 / 60);
+        let seconds = Math.floor(amountTime % 3600 % 60);
     
+        if(hours < 10) {
+            hours = `0${hours}`
+        }
+        if(minutes < 10) {
+            minutes = `0${minutes}`
+        }
         if(seconds < 10) {
             seconds = `0${seconds}`
         }
+
     
-        countDown.textContent = `${minutes} : ${seconds}`;
+        console.log(hours);
+        countDown.textContent = `${hours} : ${minutes} : ${seconds}`;
         amountTime--;
     
         
@@ -119,17 +152,3 @@ function changeText(){
 
     gsap.to('.countDown', {opacity: 1, duration: 5})
 }
-
-
-//DATE
-
-const todayDate = new Date();
-console.log(todayDate);
-
-const hour = todayDate.getHours();
-console.log(hour)
-
-if(hour>=18 && hour<8) {
-    startTimer()
-}
-
