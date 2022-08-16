@@ -51,7 +51,7 @@ gsap.to(".leaf-three", {
 const todayDate = new Date();
 console.log(todayDate);
 
-const hour = todayDate.getHours();
+let hour = todayDate.getHours();
 if(hour<10){
     hour = `0${hour}`
 }
@@ -60,11 +60,11 @@ console.log(hour)
 const minTime = 8;
 const maxTime = 18;
 
-if(hour >= maxTime || hour <= 23 ) {
+if(hour >= maxTime && hour <= 23 ) {
     timer = minTime + 23 - hour + 1;
     console.log(timer);
     startTimer();
-} else if(hour >= 0 || hour <= 8) {
+} else if(hour >= 0 && hour <= 8) {
     timer = minTime - hour;
     console.log(timer);
     startTimer();
