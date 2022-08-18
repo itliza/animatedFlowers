@@ -1,13 +1,3 @@
-// gsap.to('.lamp-left', {y: -41.5, duration: 3})
-// gsap.to('.lamp-right', {y: -41.5, duration: 3})
-// gsap.to('.light', {opacity: 1, delay: 3, duration: 10})
-
-// FIRST FLOWER
-
-// gsap.to('.leaf-one', {rotate: -5, x: -5, delay: 3, duration: 5})
-    
-
-
 gsap.to(".leaf-one", {
     scrollTrigger: {
       trigger: ".leaf-one"
@@ -45,51 +35,23 @@ gsap.to(".leaf-three", {
 });
 
 
-
-//DATE
-
-const todayDate = new Date();
-console.log(todayDate);
-
-let hour = todayDate.getHours();
-if(hour<10){
-    hour = `0${hour}`
-}
-console.log(hour)
-
-const minTime = 8;
-const maxTime = 18;
-
-if(hour >= maxTime && hour <= 23 ) {
-    timer = minTime + 23 - hour + 1;
-    console.log(timer);
-    startTimer();
-} else if(hour >= 0 && hour <= 8) {
-    timer = minTime - hour;
-    console.log(timer);
-    startTimer();
-}
-
 //TIMER
 
 const button = document.querySelector('.btn_timer');
 button.addEventListener('click', startTimer);
     
-
-let amountTime = timer * 60 * 60;
+let timer = 1;
+let amountTime = timer * 60;
 
 
 function startTimer(){
     gsap.to('.btn_timer', {opacity:0, duration: 1.5})
+    gsap.to('.about', {opacity:0, duration: 1.5, delay: 2})
     function calculateTime(){
         const countDown = document.querySelector('.countDown');
-        let hours = Math.floor(amountTime / 3600);
         let minutes = Math.floor(amountTime % 3600 / 60);
         let seconds = Math.floor(amountTime % 3600 % 60);
     
-        if(hours < 10) {
-            hours = `0${hours}`
-        }
         if(minutes < 10) {
             minutes = `0${minutes}`
         }
@@ -98,8 +60,7 @@ function startTimer(){
         }
 
     
-        console.log(hours);
-        countDown.textContent = `${hours} : ${minutes} : ${seconds}`;
+        countDown.textContent = `${minutes} : ${seconds}`;
         amountTime--;
     
         
@@ -135,7 +96,6 @@ function startTimer(){
 }
 
 function stopLight(){
-    // gsap.to('.light', {opacity: 0, duration: 5});
     document.querySelectorAll('.light').forEach(item=>{
         gsap.to('.light', {opacity:0, duration: 5})
     })
@@ -152,3 +112,4 @@ function changeText(){
 
     gsap.to('.countDown', {opacity: 1, duration: 5})
 }
+
